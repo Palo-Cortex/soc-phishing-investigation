@@ -1,0 +1,28 @@
+{
+    "name": "SOC Phishing Investigation",
+    "description": "Includes Proofpoint TAP investigations for Click Permitted and Messsage Delivered types.  ",
+    "support": "community",
+    "currentVersion": "1.0.0",
+    "author": "Scott Brumley",
+    "url": "https://live.paloaltonetworks.com/t5/cortex-xsoar-discussions/bd-p/Cortex_XSOAR_Discussions",
+    "email": "",
+    "categories": [
+        "Email"
+    ],
+    "tags": [
+        "PoV",
+        "SOC",
+        "Phishing"
+    ],
+    "useCases": [],
+    "keywords": [],
+    "marketplaces": [
+        "marketplacev2"
+    ],
+    "devEmail": [
+        "sbrumley@paloaltonetworks.com"
+    ],
+    "githubUser": [
+        "annabarone"
+    ]
+}

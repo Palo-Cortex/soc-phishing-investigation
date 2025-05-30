@@ -1,0 +1,328 @@
+id: 'SOC Phishing Investigation'
+inputs: []
+name: SOC Phishing Investigation
+outputs: []
+quiet: true
+starttaskid: "0"
+tasks:
+  "0":
+    continueonerrortype: ""
+    id: "0"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#none#':
+      - "8"
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      id: 032e3850-1ad4-4c33-8dfd-8aafc50a06c5
+      iscommand: false
+      name: ""
+      version: -1
+    taskid: 032e3850-1ad4-4c33-8dfd-8aafc50a06c5
+    timertriggers: []
+    type: start
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 50
+        }
+      }
+  "1":
+    conditions:
+    - condition:
+      - - left:
+            iscontext: true
+            value:
+              simple: modules.brand
+          operator: StringContainsArray
+          right:
+            value:
+              simple: Proofpoint TAP v2
+      label: ProofPoint TAP
+    continueonerrortype: ""
+    id: "1"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#default#':
+      - "5"
+      ProofPoint TAP:
+      - "2"
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      id: ff7179ab-fa1f-4d18-a276-5ebebd1d3dbb
+      iscommand: false
+      name: Which Brand Should be used?
+      type: condition
+      version: -1
+    taskid: ff7179ab-fa1f-4d18-a276-5ebebd1d3dbb
+    timertriggers: []
+    type: condition
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 380
+        }
+      }
+  "2":
+    continueonerrortype: ""
+    id: "2"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#none#':
+      - "3"
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      id: 33b763a9-3c97-4a68-be6f-4385ed6ee918
+      iscommand: false
+      name: ProofPoint TAP
+      type: title
+      version: -1
+    taskid: 33b763a9-3c97-4a68-be6f-4385ed6ee918
+    timertriggers: []
+    type: title
+    view: |-
+      {
+        "position": {
+          "x": 245.25,
+          "y": 550
+        }
+      }
+  "3":
+    conditions:
+    - condition:
+      - - left:
+            iscontext: true
+            value:
+              complex:
+                accessor: type
+                root: alert
+                transformers:
+                - operator: toLowerCase
+          operator: containsString
+          right:
+            value:
+              simple: message delivered
+      label: Message Delivered
+    - condition:
+      - - left:
+            iscontext: true
+            value:
+              complex:
+                accessor: type
+                root: alert
+                transformers:
+                - operator: toLowerCase
+          operator: containsString
+          right:
+            value:
+              simple: click permitted
+      label: Click Permitted
+    continueonerrortype: ""
+    id: "3"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    nexttasks:
+      '#default#':
+      - "5"
+      Click Permitted:
+      - "6"
+      Message Delivered:
+      - "7"
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      id: f702023c-bd08-48d3-a059-5e615ce3fca5
+      iscommand: false
+      name: Alert Type
+      type: condition
+      version: -1
+    taskid: f702023c-bd08-48d3-a059-5e615ce3fca5
+    timertriggers: []
+    type: condition
+    view: |-
+      {
+        "position": {
+          "x": 245.25,
+          "y": 710
+        }
+      }
+  "5":
+    continueonerrortype: ""
+    id: "5"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    note: false
+    quietmode: 0
+    separatecontext: false
+    skipunavailable: false
+    task:
+      brand: ""
+      id: 97b6575e-a037-48f9-b85f-bbc857b49eb0
+      iscommand: false
+      name: Done
+      type: title
+      version: -1
+    taskid: 97b6575e-a037-48f9-b85f-bbc857b49eb0
+    timertriggers: []
+    type: title
+    view: |-
+      {
+        "position": {
+          "x": 195.25,
+          "y": 1050
+        }
+      }
+  "6":
+    continueonerrortype: ""
+    id: "6"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    loop:
+      exitCondition: ""
+      iscommand: false
+      max: 100
+      wait: 1
+    nexttasks:
+      '#none#':
+      - "5"
+    note: false
+    quietmode: 0
+    scriptarguments:
+      Shadow:
+        simple: "false"
+    separatecontext: false
+    skipunavailable: true
+    task:
+      brand: ""
+      id: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
+      iscommand: false
+      name: SOC Proofpoint Click Permitted
+      playbookId: 'SOC Proofpoint Click Permitted'
+      type: playbook
+      version: -1
+    taskid: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
+    timertriggers: []
+    type: playbook
+    view: |-
+      {
+        "position": {
+          "x": 245.25,
+          "y": 880
+        }
+      }
+  "7":
+    continueonerrortype: ""
+    id: "7"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    loop:
+      exitCondition: ""
+      iscommand: false
+      max: 100
+      wait: 1
+    nexttasks:
+      '#none#':
+      - "5"
+    note: false
+    quietmode: 0
+    scriptarguments:
+      Shadow:
+        simple: "false"
+    separatecontext: false
+    skipunavailable: true
+    task:
+      brand: ""
+      id: 914ed23a-aec3-4dd2-8859-389ef02a0b38
+      iscommand: false
+      name: SOC Proofpoint Message Delivered
+      playbookId: 'SOC Proofpoint Message Delivered'
+      type: playbook
+      version: -1
+    taskid: 914ed23a-aec3-4dd2-8859-389ef02a0b38
+    timertriggers: []
+    type: playbook
+    view: |-
+      {
+        "position": {
+          "x": 726.25,
+          "y": 880
+        }
+      }
+  "8":
+    continueonerrortype: ""
+    id: "8"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    loop:
+      exitCondition: ""
+      iscommand: false
+      max: 100
+      wait: 1
+    nexttasks:
+      '#none#':
+      - "1"
+    note: false
+    quietmode: 0
+    separatecontext: true
+    skipunavailable: true
+    task:
+      brand: ""
+      id: cb1ff501-e2d7-4987-969d-d0b3657bfcd6
+      iscommand: false
+      name: Foundation - Upon Trigger
+      playbookId: Foundation - Upon Trigger
+      type: playbook
+      version: -1
+    taskid: cb1ff501-e2d7-4987-969d-d0b3657bfcd6
+    timertriggers: []
+    type: playbook
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 210
+        }
+      }
+version: -1
+view: |-
+  {
+    "linkLabelsPosition": {
+      "1_5_#default#": 0.9
+    },
+    "paper": {
+      "dimensions": {
+        "height": 1060,
+        "width": 1057.25,
+        "x": 50,
+        "y": 50
+      }
+    }
+  }
