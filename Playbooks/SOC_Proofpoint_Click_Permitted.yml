@@ -1,5 +1,6 @@
 dirtyInputs: true
 id: 'SOC Proofpoint Click Permitted'
+adopted: true
 inputSections:
 - description: Generic group for inputs
   inputs:

@@ -1,5 +1,6 @@
 dirtyInputs: true
 id: 'SOC Proofpoint Message Delivered'
+adopted: true
 inputSections:
 - description: Generic group for inputs
   inputs:
