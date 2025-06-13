@@ -2,7 +2,7 @@
     "name": "SOC Phishing Investigation",
     "description": "Includes Proofpoint TAP investigations for Click Permitted and Messsage Delivered types.  ",
     "support": "community",
-    "currentVersion": "1.0.0",
+    "currentVersion": "1.0.1",
     "author": "Scott Brumley",
     "url": "https://live.paloaltonetworks.com/t5/cortex-xsoar-discussions/bd-p/Cortex_XSOAR_Discussions",
     "email": "",
