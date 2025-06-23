@@ -53,11 +53,7 @@ All playbooks call a standard `Error Handler` sub-playbook to:
 
 ---
 
-## Dependency Graph
 
-![Dependency Graph](https://github.com/Palo-Cortex/soc-phishing-investigation-response/blob/main/images/soc-phishing-investigation-response.jpg)
-
----
 
 ## Contributing
 
