@@ -1,0 +1,19 @@
+{
+  "trigger_id": "phishing",
+  "playbook_id": "SOC Phishing Investigation",
+  "suggestion_reason": "Recommended for SOC Phishing Investigation and Response Playbooks with SOC Framework",
+  "description": "Recommended for SOC Phishing Investigation and Response Playbooks with SOC Framework",
+  "trigger_name": "Phishing",
+  "alerts_filter": {
+    "filter": {
+      "AND": [
+        {
+            "SEARCH_FIELD": "mitre_technique_id_and_name",
+            "SEARCH_TYPE": "CONTAINS",
+            "SEARCH_VALUE": "T1566 - Phishing"
+        }
+      ]
+    }
+  }
+}
+

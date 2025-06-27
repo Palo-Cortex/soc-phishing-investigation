@@ -6,6 +6,12 @@
             "system": "yes"
         }
     ],
+    "post_config_docs": [
+            {
+                "name": "SOC Phishing Investigation and Response - Manual Steps",
+                "url": "https://github.com/Palo-Cortex/soc-phishing-investigation/blob/main/POST_CONFIG_README.md"
+            }
+    ],
     "marketplace_packs": [
         {
             "id": "CommonPlaybooks",
