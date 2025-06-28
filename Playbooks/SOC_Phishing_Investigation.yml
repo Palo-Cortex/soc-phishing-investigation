@@ -1,9 +1,19 @@
+contentitemexportablefields:
+  contentitemfields:
+    definitionid: ""
+    fromServerVersion: ""
+    isoverridable: false
+    itemVersion: 1.0.0
+    packID: ""
+    packName: SOC Phishing Investigation
+    prevname: ""
+    toServerVersion: ""
 id: 'SOC Phishing Investigation'
-adopted: true
 inputs: []
 name: SOC Phishing Investigation
 outputs: []
 quiet: true
+sourceplaybookid: SOC Phishing Investigation
 starttaskid: "0"
 tasks:
   "0":
@@ -115,11 +125,11 @@ tasks:
             iscontext: true
             value:
               complex:
-                accessor: type
+                accessor: rawName
                 root: alert
                 transformers:
                 - operator: toLowerCase
-          operator: containsString
+          operator: containsGeneral
           right:
             value:
               simple: message delivered
@@ -129,11 +139,11 @@ tasks:
             iscontext: true
             value:
               complex:
-                accessor: type
+                accessor: rawName
                 root: alert
                 transformers:
                 - operator: toLowerCase
-          operator: containsString
+          operator: containsGeneral
           right:
             value:
               simple: click permitted
@@ -156,12 +166,12 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: f702023c-bd08-48d3-a059-5e615ce3fca5
+      id: 03024527-a7ef-4455-a125-322a5a83e907
       iscommand: false
       name: Alert Type
       type: condition
       version: -1
-    taskid: f702023c-bd08-48d3-a059-5e615ce3fca5
+    taskid: 03024527-a7ef-4455-a125-322a5a83e907
     timertriggers: []
     type: condition
     view: |-
@@ -224,7 +234,7 @@ tasks:
       id: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
       iscommand: false
       name: SOC Proofpoint Click Permitted
-      playbookId: 'SOC Proofpoint Click Permitted'
+      playbookId: SOC Proofpoint Click Permitted
       type: playbook
       version: -1
     taskid: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
@@ -263,7 +273,7 @@ tasks:
       id: 914ed23a-aec3-4dd2-8859-389ef02a0b38
       iscommand: false
       name: SOC Proofpoint Message Delivered
-      playbookId: 'SOC Proofpoint Message Delivered'
+      playbookId: SOC Proofpoint Message Delivered
       type: playbook
       version: -1
     taskid: 914ed23a-aec3-4dd2-8859-389ef02a0b38
@@ -321,7 +331,7 @@ view: |-
     "paper": {
       "dimensions": {
         "height": 1060,
-        "width": 1057.25,
+        "width": 1056.25,
         "x": 50,
         "y": 50
       }

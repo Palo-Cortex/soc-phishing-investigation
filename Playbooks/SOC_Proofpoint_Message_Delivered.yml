@@ -1,6 +1,15 @@
+contentitemexportablefields:
+  contentitemfields:
+    definitionid: ""
+    fromServerVersion: ""
+    isoverridable: false
+    itemVersion: 1.0.0
+    packID: ""
+    packName: SOC Phishing Investigation
+    prevname: ""
+    toServerVersion: ""
 dirtyInputs: true
 id: 'SOC Proofpoint Message Delivered'
-adopted: true
 inputSections:
 - description: Generic group for inputs
   inputs:
@@ -309,7 +318,7 @@ tasks:
         simple: ${alert.proofpointtapthreatinfomap}
       indicatorType:
         complex:
-          accessor: threattype
+          accessor: threatType
           root: alert.proofpointtapthreatinfomap
           transformers:
           - args:
@@ -342,13 +351,13 @@ tasks:
       brand: ""
       description: Add DBot score to context for indicators with custom vendor, score,
         reliability, and type.
-      id: 3698522d-f7aa-45ef-ba6d-3afe26bd1225
+      id: 9fb7e578-9268-43a6-b3bc-cc0d65ea2390
       iscommand: false
       name: Assign Proofpoint DBot Score
       script: AddDBotScoreToContext
       type: regular
       version: -1
-    taskid: 3698522d-f7aa-45ef-ba6d-3afe26bd1225
+    taskid: 9fb7e578-9268-43a6-b3bc-cc0d65ea2390
     timertriggers: []
     type: regular
     view: |-
@@ -530,7 +539,7 @@ tasks:
           - - left:
                 iscontext: true
                 value:
-                  simple: alert.proofpointtapthreatinfomap.threattype
+                  simple: alert.proofpointtapthreatinfomap.threatType
               operator: isEqualString
               right:
                 value:
@@ -548,13 +557,13 @@ tasks:
     task:
       brand: ""
       description: Converts the contents of a URL to an image file or a PDF file.
-      id: 26bb2dc8-44b1-4b52-bc2b-092db83db3bd
+      id: e0b5df0d-7ce6-448b-9b78-20fce7de7513
       iscommand: true
       name: Rasterize URL
       script: '|||rasterize'
       type: regular
       version: -1
-    taskid: 26bb2dc8-44b1-4b52-bc2b-092db83db3bd
+    taskid: e0b5df0d-7ce6-448b-9b78-20fce7de7513
     timertriggers: []
     type: regular
     view: |-
@@ -587,7 +596,7 @@ tasks:
           - - left:
                 iscontext: true
                 value:
-                  simple: alert.proofpointtapthreatinfomap.threattype
+                  simple: alert.proofpointtapthreatinfomap.threatType
               operator: isEqualString
               right:
                 value:
@@ -605,13 +614,13 @@ tasks:
     task:
       brand: ""
       description: Sends http request. Returns the response as json.
-      id: 4ffc2b28-9624-4af3-8d92-d3fe04b79235
+      id: e4b5ffa1-0a65-42f4-9a30-8404e27ff685
       iscommand: false
       name: Request raw HTML
       script: http
       type: regular
       version: -1
-    taskid: 4ffc2b28-9624-4af3-8d92-d3fe04b79235
+    taskid: e4b5ffa1-0a65-42f4-9a30-8404e27ff685
     timertriggers: []
     type: regular
     view: |-
@@ -807,7 +816,7 @@ view: |-
     "paper": {
       "dimensions": {
         "height": 2730,
-        "width": 2074,
+        "width": 2073,
         "x": 50,
         "y": 50
       }

@@ -1,6 +1,15 @@
+contentitemexportablefields:
+  contentitemfields:
+    definitionid: ""
+    fromServerVersion: ""
+    isoverridable: false
+    itemVersion: 1.0.0
+    packID: ""
+    packName: SOC Phishing Investigation
+    prevname: ""
+    toServerVersion: ""
 dirtyInputs: true
 id: 'SOC Proofpoint Click Permitted'
-adopted: true
 inputSections:
 - description: Generic group for inputs
   inputs:
@@ -34,7 +43,7 @@ tasks:
     isoversize: false
     nexttasks:
       '#none#':
-      - "28"
+      - "23"
     note: false
     quietmode: 0
     separatecontext: false
@@ -760,37 +769,6 @@ tasks:
           "y": 2550
         }
       }
-  "28":
-    continueonerrortype: ""
-    id: "28"
-    ignoreworker: false
-    isautoswitchedtoquietmode: false
-    isoversize: false
-    nexttasks:
-      '#none#':
-      - "23"
-    note: false
-    quietmode: 0
-    separatecontext: true
-    skipunavailable: false
-    task:
-      brand: ""
-      id: 569f89b6-a611-445d-83c7-b651ab245a10
-      iscommand: false
-      name: Foundation - Upon Trigger
-      playbookId: Foundation - Upon Trigger
-      type: playbook
-      version: -1
-    taskid: 569f89b6-a611-445d-83c7-b651ab245a10
-    timertriggers: []
-    type: playbook
-    view: |-
-      {
-        "position": {
-          "x": 50,
-          "y": 210
-        }
-      }
   "29":
     continueonerrortype: ""
     id: "29"
@@ -856,7 +834,7 @@ view: |-
     "paper": {
       "dimensions": {
         "height": 3070,
-        "width": 2083.5,
+        "width": 2082.5,
         "x": 50,
         "y": 50
       }
