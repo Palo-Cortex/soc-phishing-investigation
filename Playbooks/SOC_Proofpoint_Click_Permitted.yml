@@ -3,7 +3,7 @@ contentitemexportablefields:
     definitionid: ""
     fromServerVersion: ""
     isoverridable: false
-    itemVersion: 1.0.0
+    itemVersion: 1.0.3
     packID: ""
     packName: SOC Phishing Investigation
     prevname: ""
@@ -84,19 +84,19 @@ tasks:
       includeCampaignForensics:
         simple: "true"
       threatId:
-        simple: ${alert.proofpointtapthreatinfomap.threatID}
+        simple: ${alert.proofpointtapthreatid}
     separatecontext: false
     skipunavailable: false
     task:
       brand: ""
       description: Returns forensics evidence.
-      id: 23a5fbb6-f81d-4f71-bd19-1a19dc1012f0
+      id: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
       iscommand: true
       name: Get Forensic Information
       script: '|||proofpoint-get-forensics'
       type: regular
       version: -1
-    taskid: 23a5fbb6-f81d-4f71-bd19-1a19dc1012f0
+    taskid: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
     timertriggers: []
     type: regular
     view: |-
@@ -624,19 +624,19 @@ tasks:
       extend-context:
         simple: Core=.
       ip_address:
-        simple: ${alert.labels.clickIP}
+        simple: ${alert.proofpointtapclickip}
     separatecontext: false
     skipunavailable: false
     task:
       brand: ""
       description: Get the prevalence of an ip, identified by ip_address.
-      id: 0d98aacf-4892-478e-8371-446585b5adb0
+      id: ba64c7cc-5855-4478-ad8c-8e64daf57722
       iscommand: true
       name: Prevalence of Click IP
       script: '|||core-get-IP-analytics-prevalence'
       type: regular
       version: -1
-    taskid: 0d98aacf-4892-478e-8371-446585b5adb0
+    taskid: ba64c7cc-5855-4478-ad8c-8e64daf57722
     timertriggers: []
     type: regular
     view: |-
