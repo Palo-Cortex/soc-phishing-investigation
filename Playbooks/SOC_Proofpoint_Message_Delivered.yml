@@ -3,7 +3,7 @@ contentitemexportablefields:
     definitionid: ""
     fromServerVersion: ""
     isoverridable: false
-    itemVersion: 1.0.0
+    itemVersion: 1.0.2
     packID: ""
     packName: SOC Phishing Investigation
     prevname: ""
@@ -44,7 +44,7 @@ tasks:
     isoversize: false
     nexttasks:
       '#none#':
-      - "26"
+      - "23"
     note: false
     quietmode: 0
     separatecontext: false
@@ -718,37 +718,6 @@ tasks:
         "position": {
           "x": 721.5,
           "y": 2210
-        }
-      }
-  "26":
-    continueonerrortype: ""
-    id: "26"
-    ignoreworker: false
-    isautoswitchedtoquietmode: false
-    isoversize: false
-    nexttasks:
-      '#none#':
-      - "23"
-    note: false
-    quietmode: 0
-    separatecontext: true
-    skipunavailable: false
-    task:
-      brand: ""
-      id: 2c77fd12-6699-43e6-8e5a-fc8eca8d451d
-      iscommand: false
-      name: Foundation - Upon Trigger
-      playbookId: Foundation - Upon Trigger
-      type: playbook
-      version: -1
-    taskid: 2c77fd12-6699-43e6-8e5a-fc8eca8d451d
-    timertriggers: []
-    type: playbook
-    view: |-
-      {
-        "position": {
-          "x": 676.25,
-          "y": 210
         }
       }
   "27":
