@@ -1,6 +1,15 @@
+contentitemexportablefields:
+  contentitemfields:
+    definitionid: ""
+    fromServerVersion: ""
+    isoverridable: false
+    itemVersion: 1.0.3
+    packID: ""
+    packName: SOC Phishing Investigation
+    prevname: ""
+    toServerVersion: ""
 dirtyInputs: true
 id: 'SOC Proofpoint Click Permitted'
-adopted: true
 inputSections:
 - description: Generic group for inputs
   inputs:
@@ -34,7 +43,7 @@ tasks:
     isoversize: false
     nexttasks:
       '#none#':
-      - "28"
+      - "23"
     note: false
     quietmode: 0
     separatecontext: false
@@ -75,19 +84,19 @@ tasks:
       includeCampaignForensics:
         simple: "true"
       threatId:
-        simple: ${alert.proofpointtapthreatinfomap.threatID}
+        simple: ${alert.proofpointtapthreatid}
     separatecontext: false
     skipunavailable: false
     task:
       brand: ""
       description: Returns forensics evidence.
-      id: 23a5fbb6-f81d-4f71-bd19-1a19dc1012f0
+      id: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
       iscommand: true
       name: Get Forensic Information
       script: '|||proofpoint-get-forensics'
       type: regular
       version: -1
-    taskid: 23a5fbb6-f81d-4f71-bd19-1a19dc1012f0
+    taskid: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
     timertriggers: []
     type: regular
     view: |-
@@ -615,19 +624,19 @@ tasks:
       extend-context:
         simple: Core=.
       ip_address:
-        simple: ${alert.labels.clickIP}
+        simple: ${alert.proofpointtapclickip}
     separatecontext: false
     skipunavailable: false
     task:
       brand: ""
       description: Get the prevalence of an ip, identified by ip_address.
-      id: 0d98aacf-4892-478e-8371-446585b5adb0
+      id: ba64c7cc-5855-4478-ad8c-8e64daf57722
       iscommand: true
       name: Prevalence of Click IP
       script: '|||core-get-IP-analytics-prevalence'
       type: regular
       version: -1
-    taskid: 0d98aacf-4892-478e-8371-446585b5adb0
+    taskid: ba64c7cc-5855-4478-ad8c-8e64daf57722
     timertriggers: []
     type: regular
     view: |-
@@ -760,37 +769,6 @@ tasks:
           "y": 2550
         }
       }
-  "28":
-    continueonerrortype: ""
-    id: "28"
-    ignoreworker: false
-    isautoswitchedtoquietmode: false
-    isoversize: false
-    nexttasks:
-      '#none#':
-      - "23"
-    note: false
-    quietmode: 0
-    separatecontext: true
-    skipunavailable: false
-    task:
-      brand: ""
-      id: 569f89b6-a611-445d-83c7-b651ab245a10
-      iscommand: false
-      name: Foundation - Upon Trigger
-      playbookId: Foundation - Upon Trigger
-      type: playbook
-      version: -1
-    taskid: 569f89b6-a611-445d-83c7-b651ab245a10
-    timertriggers: []
-    type: playbook
-    view: |-
-      {
-        "position": {
-          "x": 50,
-          "y": 210
-        }
-      }
   "29":
     continueonerrortype: ""
     id: "29"
@@ -856,7 +834,7 @@ view: |-
     "paper": {
       "dimensions": {
         "height": 3070,
-        "width": 2083.5,
+        "width": 2082.5,
         "x": 50,
         "y": 50
       }
