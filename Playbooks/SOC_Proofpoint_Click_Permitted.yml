@@ -3,7 +3,7 @@ contentitemexportablefields:
     definitionid: ""
     fromServerVersion: ""
     isoverridable: false
-    itemVersion: 1.0.3
+    itemVersion: 1.0.4
     packID: ""
     packName: SOC Phishing Investigation
     prevname: ""
@@ -13,16 +13,16 @@ id: 'SOC Proofpoint Click Permitted'
 inputSections:
 - description: Generic group for inputs
   inputs:
-  - Shadow
+  - ShadowMode
   name: General (Inputs group)
 inputs:
-- description: In Shadow Mode the Playbook will run in a testing only mode where it
-    prints to the war room but will not take disruptive actions
-  key: Shadow
+- description: Shadow Mode is a key safety mechanism. It ensures actions like isolate_endpoint
+    or disable_user are logged but not executed in test scenarios.
+  key: ShadowMode
   playbookInputQuery: null
-  required: true
+  required: false
   value:
-    simple: "false"
+    simple: "true"
 name: SOC Proofpoint Click Permitted
 outputSections:
 - description: Generic group for outputs
