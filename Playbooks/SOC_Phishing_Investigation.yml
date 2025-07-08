@@ -1,9 +1,19 @@
+contentitemexportablefields:
+  contentitemfields:
+    definitionid: ""
+    fromServerVersion: ""
+    isoverridable: false
+    itemVersion: 1.0.4
+    packID: ""
+    packName: SOC Phishing Investigation
+    prevname: ""
+    toServerVersion: ""
 id: 'SOC Phishing Investigation'
-adopted: true
 inputs: []
 name: SOC Phishing Investigation
 outputs: []
 quiet: true
+sourceplaybookid: SOC Phishing Investigation
 starttaskid: "0"
 tasks:
   "0":
@@ -14,7 +24,7 @@ tasks:
     isoversize: false
     nexttasks:
       '#none#':
-      - "8"
+      - "1"
     note: false
     quietmode: 0
     separatecontext: false
@@ -75,7 +85,7 @@ tasks:
       {
         "position": {
           "x": 50,
-          "y": 380
+          "y": 210
         }
       }
   "2":
@@ -104,8 +114,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 245.25,
-          "y": 550
+          "x": 172.5,
+          "y": 380
         }
       }
   "3":
@@ -147,9 +157,9 @@ tasks:
       '#default#':
       - "5"
       Click Permitted:
-      - "6"
+      - "8"
       Message Delivered:
-      - "7"
+      - "9"
     note: false
     quietmode: 0
     separatecontext: false
@@ -167,8 +177,8 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 245.25,
-          "y": 710
+          "x": 172.5,
+          "y": 540
         }
       }
   "5":
@@ -194,85 +204,7 @@ tasks:
     view: |-
       {
         "position": {
-          "x": 195.25,
-          "y": 1050
-        }
-      }
-  "6":
-    continueonerrortype: ""
-    id: "6"
-    ignoreworker: false
-    isautoswitchedtoquietmode: false
-    isoversize: false
-    loop:
-      exitCondition: ""
-      iscommand: false
-      max: 100
-      wait: 1
-    nexttasks:
-      '#none#':
-      - "5"
-    note: false
-    quietmode: 0
-    scriptarguments:
-      Shadow:
-        simple: "false"
-    separatecontext: false
-    skipunavailable: true
-    task:
-      brand: ""
-      id: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
-      iscommand: false
-      name: SOC Proofpoint Click Permitted
-      playbookId: 'SOC Proofpoint Click Permitted'
-      type: playbook
-      version: -1
-    taskid: 8f7f45c7-a0e0-4489-afe3-b4bfad50ee10
-    timertriggers: []
-    type: playbook
-    view: |-
-      {
-        "position": {
-          "x": 245.25,
-          "y": 880
-        }
-      }
-  "7":
-    continueonerrortype: ""
-    id: "7"
-    ignoreworker: false
-    isautoswitchedtoquietmode: false
-    isoversize: false
-    loop:
-      exitCondition: ""
-      iscommand: false
-      max: 100
-      wait: 1
-    nexttasks:
-      '#none#':
-      - "5"
-    note: false
-    quietmode: 0
-    scriptarguments:
-      Shadow:
-        simple: "false"
-    separatecontext: false
-    skipunavailable: true
-    task:
-      brand: ""
-      id: 914ed23a-aec3-4dd2-8859-389ef02a0b38
-      iscommand: false
-      name: SOC Proofpoint Message Delivered
-      playbookId: 'SOC Proofpoint Message Delivered'
-      type: playbook
-      version: -1
-    taskid: 914ed23a-aec3-4dd2-8859-389ef02a0b38
-    timertriggers: []
-    type: playbook
-    view: |-
-      {
-        "position": {
-          "x": 726.25,
+          "x": 162.5,
           "y": 880
         }
       }
@@ -289,27 +221,69 @@ tasks:
       wait: 1
     nexttasks:
       '#none#':
-      - "1"
+      - "5"
     note: false
     quietmode: 0
+    scriptarguments:
+      ShadowMode:
+        simple: ${shadow_mode}
     separatecontext: true
-    skipunavailable: true
+    skipunavailable: false
     task:
       brand: ""
-      id: cb1ff501-e2d7-4987-969d-d0b3657bfcd6
+      id: 97148474-cba0-40f2-9849-4ebf9abfd4c0
       iscommand: false
-      name: Foundation - Upon Trigger
-      playbookId: Foundation - Upon Trigger
+      name: SOC Proofpoint Click Permitted
+      playbookId: 'SOC Proofpoint Click Permitted'
       type: playbook
       version: -1
-    taskid: cb1ff501-e2d7-4987-969d-d0b3657bfcd6
+    taskid: 97148474-cba0-40f2-9849-4ebf9abfd4c0
     timertriggers: []
     type: playbook
     view: |-
       {
         "position": {
-          "x": 50,
-          "y": 210
+          "x": 172.5,
+          "y": 710
+        }
+      }
+  "9":
+    continueonerrortype: ""
+    id: "9"
+    ignoreworker: false
+    isautoswitchedtoquietmode: false
+    isoversize: false
+    loop:
+      exitCondition: ""
+      iscommand: false
+      max: 100
+      wait: 1
+    nexttasks:
+      '#none#':
+      - "5"
+    note: false
+    quietmode: 0
+    scriptarguments:
+      ShadowMode:
+        simple: ${shadow_mode}
+    separatecontext: true
+    skipunavailable: false
+    task:
+      brand: ""
+      id: f55d5c4e-fa40-4765-91ad-99c2cc67f363
+      iscommand: false
+      name: SOC Proofpoint Message Delivered
+      playbookId: 'SOC Proofpoint Message Delivered'
+      type: playbook
+      version: -1
+    taskid: f55d5c4e-fa40-4765-91ad-99c2cc67f363
+    timertriggers: []
+    type: playbook
+    view: |-
+      {
+        "position": {
+          "x": 602.5,
+          "y": 710
         }
       }
 version: -1
@@ -320,8 +294,8 @@ view: |-
     },
     "paper": {
       "dimensions": {
-        "height": 1060,
-        "width": 1057.25,
+        "height": 890,
+        "width": 932.5,
         "x": 50,
         "y": 50
       }
