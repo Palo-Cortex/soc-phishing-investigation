@@ -1,15 +1,17 @@
+adopted: true
 contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: ""
     isoverridable: false
-    itemVersion: 1.0.4
+    itemVersion: 1.0.5
     packID: ""
     packName: SOC Phishing Investigation
     prevname: ""
+    supportedModules: []
     toServerVersion: ""
 dirtyInputs: true
-id: 'SOC Proofpoint Click Permitted'
+id: SOC Proofpoint Click Permitted
 inputSections:
 - description: Generic group for inputs
   inputs:
@@ -50,11 +52,12 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 0b9d53d3-d66f-4715-8249-de216ec9808d
+      id: 247f2e71-72a8-4dd2-86a2-638b63d9f62b
       iscommand: false
       name: ""
+      playbooktaskmissingcomponent: null
       version: -1
-    taskid: 0b9d53d3-d66f-4715-8249-de216ec9808d
+    taskid: 247f2e71-72a8-4dd2-86a2-638b63d9f62b
     timertriggers: []
     type: start
     view: |-
@@ -90,13 +93,14 @@ tasks:
     task:
       brand: ""
       description: Returns forensics evidence.
-      id: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
+      id: 4706582a-b3ae-4ddb-85d6-528de14fd8bb
       iscommand: true
       name: Get Forensic Information
+      playbooktaskmissingcomponent: null
       script: '|||proofpoint-get-forensics'
       type: regular
       version: -1
-    taskid: a54ad3be-1c1f-4588-a145-d7ffcd5f38a2
+    taskid: 4706582a-b3ae-4ddb-85d6-528de14fd8bb
     timertriggers: []
     type: regular
     view: |-
@@ -137,13 +141,14 @@ tasks:
     task:
       brand: Builtin
       description: commands.local.cmd.set.incident
-      id: bf746e5f-94ec-4ab2-a00a-04c9090adc6b
+      id: 6f1d9309-a341-492f-87b0-b4705ef3955a
       iscommand: true
       name: Summarize Forensic Info
+      playbooktaskmissingcomponent: null
       script: Builtin|||setAlert
       type: regular
       version: -1
-    taskid: bf746e5f-94ec-4ab2-a00a-04c9090adc6b
+    taskid: 6f1d9309-a341-492f-87b0-b4705ef3955a
     timertriggers: []
     type: regular
     view: |-
@@ -180,12 +185,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 5ddb3b42-ec1a-4353-83d7-f3760fa60739
+      id: 6c5b1e51-bd47-449d-87c2-b173c8288ddb
       iscommand: false
       name: Forensic Info Exists?
+      playbooktaskmissingcomponent: null
       type: condition
       version: -1
-    taskid: 5ddb3b42-ec1a-4353-83d7-f3760fa60739
+    taskid: 6c5b1e51-bd47-449d-87c2-b173c8288ddb
     timertriggers: []
     type: condition
     view: |-
@@ -221,13 +227,14 @@ tasks:
     task:
       brand: Builtin
       description: commands.local.cmd.extract.indicators
-      id: a4444626-37ea-4f61-8016-7e1c62cfcf14
+      id: 087af4d7-24b4-482f-837a-870677eb53d7
       iscommand: true
       name: Create Indicator from Threat
+      playbooktaskmissingcomponent: null
       script: Builtin|||extractIndicators
       type: regular
       version: -1
-    taskid: a4444626-37ea-4f61-8016-7e1c62cfcf14
+    taskid: 087af4d7-24b4-482f-837a-870677eb53d7
     timertriggers: []
     type: regular
     view: |-
@@ -252,12 +259,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: b9b18ac2-1779-4228-8ca6-a1ee4314025e
+      id: 297fa85e-92c7-4cfe-84b8-9a54dfca2746
       iscommand: false
       name: TIM - Enrichment
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: b9b18ac2-1779-4228-8ca6-a1ee4314025e
+    taskid: 297fa85e-92c7-4cfe-84b8-9a54dfca2746
     timertriggers: []
     type: title
     view: |-
@@ -296,13 +304,14 @@ tasks:
       brand: ""
       description: Add DBot score to context for indicators with custom vendor, score,
         reliability, and type.
-      id: 9f8fb9ec-0c9c-4ea3-a4f4-092bbb5c77a4
+      id: f6d59bd2-bcc7-43b0-88f6-03581a7edf3c
       iscommand: false
       name: Assign Proofpoint DBot Score
+      playbooktaskmissingcomponent: null
       script: AddDBotScoreToContext
       type: regular
       version: -1
-    taskid: 9f8fb9ec-0c9c-4ea3-a4f4-092bbb5c77a4
+    taskid: f6d59bd2-bcc7-43b0-88f6-03581a7edf3c
     timertriggers: []
     type: regular
     view: |-
@@ -334,13 +343,14 @@ tasks:
     task:
       brand: ""
       description: Get the overall score for the indicator as calculated by DBot.
-      id: b003a1b1-11d6-4477-b3f5-3a95816d709b
+      id: 15e8dfe3-48d6-4cf2-81c2-0d00d4ad5333
       iscommand: false
       name: Get Indicator Scores
+      playbooktaskmissingcomponent: null
       script: GetIndicatorDBotScoreFromCache
       type: regular
       version: -1
-    taskid: b003a1b1-11d6-4477-b3f5-3a95816d709b
+    taskid: 15e8dfe3-48d6-4cf2-81c2-0d00d4ad5333
     timertriggers: []
     type: regular
     view: |-
@@ -388,12 +398,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 9f6de37e-1303-49e7-8715-08e10901e086
+      id: 6f713944-9fb2-4e8b-8071-cdc73f3cfcd6
       iscommand: false
       name: Remediation Required?
+      playbooktaskmissingcomponent: null
       type: condition
       version: -1
-    taskid: 9f6de37e-1303-49e7-8715-08e10901e086
+    taskid: 6f713944-9fb2-4e8b-8071-cdc73f3cfcd6
     timertriggers: []
     type: condition
     view: |-
@@ -422,13 +433,14 @@ tasks:
     task:
       brand: Builtin
       description: commands.local.cmd.close.inv
-      id: 90be9cad-92ee-4bf8-b131-395cdc8abd2f
+      id: c44952d7-58d2-4ffe-8503-0b128945577c
       iscommand: true
       name: Close
+      playbooktaskmissingcomponent: null
       script: Builtin|||closeInvestigation
       type: regular
       version: -1
-    taskid: 90be9cad-92ee-4bf8-b131-395cdc8abd2f
+    taskid: c44952d7-58d2-4ffe-8503-0b128945577c
     timertriggers: []
     type: regular
     view: |-
@@ -453,12 +465,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 89886dee-4e3e-4c9f-8414-ad151cc66e54
+      id: ccbb13e0-d852-4431-8b3e-380a815ab99d
       iscommand: false
       name: Analysis
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: 89886dee-4e3e-4c9f-8414-ad151cc66e54
+    taskid: ccbb13e0-d852-4431-8b3e-380a815ab99d
     timertriggers: []
     type: title
     view: |-
@@ -490,13 +503,14 @@ tasks:
     task:
       brand: ""
       description: Converts the contents of a URL to an image file or a PDF file.
-      id: f3f1911d-d1f7-48b5-8506-3a3655ec3287
+      id: d5e99b0a-ac5c-4a4d-8715-b9394b4cb9bb
       iscommand: true
       name: Rasterize URL
+      playbooktaskmissingcomponent: null
       script: '|||rasterize'
       type: regular
       version: -1
-    taskid: f3f1911d-d1f7-48b5-8506-3a3655ec3287
+    taskid: d5e99b0a-ac5c-4a4d-8715-b9394b4cb9bb
     timertriggers: []
     type: regular
     view: |-
@@ -530,13 +544,14 @@ tasks:
     task:
       brand: ""
       description: Sends http request. Returns the response as json.
-      id: 8b4d6890-9876-4204-8a06-a9aaae936420
+      id: 8ac2e16c-33f7-45cd-8ecd-d60aece39da8
       iscommand: false
       name: Request raw HTML
+      playbooktaskmissingcomponent: null
       script: http
       type: regular
       version: -1
-    taskid: 8b4d6890-9876-4204-8a06-a9aaae936420
+    taskid: 8ac2e16c-33f7-45cd-8ecd-d60aece39da8
     timertriggers: []
     type: regular
     view: |-
@@ -561,12 +576,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 6284baff-3fb9-461a-889d-645f171e605c
+      id: b60e8bb8-ae97-4034-898c-94a40e6419ba
       iscommand: false
       name: Forensics
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: 6284baff-3fb9-461a-889d-645f171e605c
+    taskid: b60e8bb8-ae97-4034-898c-94a40e6419ba
     timertriggers: []
     type: title
     view: |-
@@ -591,12 +607,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 4e618c0d-6718-4b0f-85f9-d7084050e938
+      id: ca3e7033-b753-45a2-8bfd-34a25ccfc674
       iscommand: false
       name: Remediation
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: 4e618c0d-6718-4b0f-85f9-d7084050e938
+    taskid: ca3e7033-b753-45a2-8bfd-34a25ccfc674
     timertriggers: []
     type: title
     view: |-
@@ -630,13 +647,14 @@ tasks:
     task:
       brand: ""
       description: Get the prevalence of an ip, identified by ip_address.
-      id: ba64c7cc-5855-4478-ad8c-8e64daf57722
+      id: 6ab28560-bb6a-4786-8fe5-958e0325d089
       iscommand: true
       name: Prevalence of Click IP
+      playbooktaskmissingcomponent: null
       script: '|||core-get-IP-analytics-prevalence'
       type: regular
       version: -1
-    taskid: ba64c7cc-5855-4478-ad8c-8e64daf57722
+    taskid: 6ab28560-bb6a-4786-8fe5-958e0325d089
     timertriggers: []
     type: regular
     view: |-
@@ -723,13 +741,14 @@ tasks:
     task:
       brand: Builtin
       description: commands.local.cmd.set.incident
-      id: f3626359-1539-4b91-ab41-5aab6522c99c
+      id: 892e8779-f3bf-47fc-88c1-0f0393bc2a47
       iscommand: true
       name: Set Response Data
+      playbooktaskmissingcomponent: null
       script: Builtin|||setAlert
       type: regular
       version: -1
-    taskid: f3626359-1539-4b91-ab41-5aab6522c99c
+    taskid: 892e8779-f3bf-47fc-88c1-0f0393bc2a47
     timertriggers: []
     type: regular
     view: |-
@@ -754,12 +773,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: b4f0dbea-65db-4be4-8a39-2b45a5e42882
+      id: bebf4945-d6ce-4b9d-8d76-668b92945750
       iscommand: false
       name: Manual Review
+      playbooktaskmissingcomponent: null
       type: regular
       version: -1
-    taskid: b4f0dbea-65db-4be4-8a39-2b45a5e42882
+    taskid: bebf4945-d6ce-4b9d-8d76-668b92945750
     timertriggers: []
     type: regular
     view: |-
@@ -781,12 +801,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: f3d3b6e4-8232-4808-87dd-ee2e280cd321
+      id: f9b453cd-67ef-4050-81db-5ca826bf1404
       iscommand: false
       name: Done
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: f3d3b6e4-8232-4808-87dd-ee2e280cd321
+    taskid: f9b453cd-67ef-4050-81db-5ca826bf1404
     timertriggers: []
     type: title
     view: |-
@@ -811,13 +832,14 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: fc8e2675-f51f-4110-888e-980fb44da7cb
+      id: d38e6a2d-7e00-445d-851f-fb893be95d10
       iscommand: false
       name: Foundation - Error Handling
-      playbookId: Foundation - Error Handling
+      playbookName: Foundation - Error Handling
+      playbooktaskmissingcomponent: null
       type: playbook
       version: -1
-    taskid: fc8e2675-f51f-4110-888e-980fb44da7cb
+    taskid: d38e6a2d-7e00-445d-851f-fb893be95d10
     timertriggers: []
     type: playbook
     view: |-

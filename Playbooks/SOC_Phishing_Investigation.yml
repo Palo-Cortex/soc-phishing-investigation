@@ -1,14 +1,17 @@
+adopted: true
 contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: ""
     isoverridable: false
-    itemVersion: 1.0.4
+    itemVersion: 1.0.5
     packID: ""
     packName: SOC Phishing Investigation
     prevname: ""
+    supportedModules: []
     toServerVersion: ""
-id: 'SOC Phishing Investigation'
+dirtyInputs: true
+id: SOC Phishing Investigation
 inputs: []
 name: SOC Phishing Investigation
 outputs: []
@@ -31,11 +34,12 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 032e3850-1ad4-4c33-8dfd-8aafc50a06c5
+      id: 4a533215-5bf9-4d73-8cb7-27d01a778163
       iscommand: false
       name: ""
+      playbooktaskmissingcomponent: null
       version: -1
-    taskid: 032e3850-1ad4-4c33-8dfd-8aafc50a06c5
+    taskid: 4a533215-5bf9-4d73-8cb7-27d01a778163
     timertriggers: []
     type: start
     view: |-
@@ -73,12 +77,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: ff7179ab-fa1f-4d18-a276-5ebebd1d3dbb
+      id: 0132495c-9ff3-4285-8e94-b322ca0ad372
       iscommand: false
       name: Which Brand Should be used?
+      playbooktaskmissingcomponent: null
       type: condition
       version: -1
-    taskid: ff7179ab-fa1f-4d18-a276-5ebebd1d3dbb
+    taskid: 0132495c-9ff3-4285-8e94-b322ca0ad372
     timertriggers: []
     type: condition
     view: |-
@@ -103,12 +108,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 33b763a9-3c97-4a68-be6f-4385ed6ee918
+      id: 82e30d51-0e81-418e-8300-de3015d8ba74
       iscommand: false
       name: ProofPoint TAP
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: 33b763a9-3c97-4a68-be6f-4385ed6ee918
+    taskid: 82e30d51-0e81-418e-8300-de3015d8ba74
     timertriggers: []
     type: title
     view: |-
@@ -166,12 +172,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: f702023c-bd08-48d3-a059-5e615ce3fca5
+      id: 76b09b3a-0e92-4370-8c77-ef6499dbcb07
       iscommand: false
       name: Alert Type
+      playbooktaskmissingcomponent: null
       type: condition
       version: -1
-    taskid: f702023c-bd08-48d3-a059-5e615ce3fca5
+    taskid: 76b09b3a-0e92-4370-8c77-ef6499dbcb07
     timertriggers: []
     type: condition
     view: |-
@@ -193,12 +200,13 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 97b6575e-a037-48f9-b85f-bbc857b49eb0
+      id: 40d75ba9-c56b-4654-824d-93aa56e66731
       iscommand: false
       name: Done
+      playbooktaskmissingcomponent: null
       type: title
       version: -1
-    taskid: 97b6575e-a037-48f9-b85f-bbc857b49eb0
+    taskid: 40d75ba9-c56b-4654-824d-93aa56e66731
     timertriggers: []
     type: title
     view: |-
@@ -231,13 +239,14 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: 97148474-cba0-40f2-9849-4ebf9abfd4c0
+      id: 372b1fed-48a1-48fa-8131-cb1c427f123b
       iscommand: false
       name: SOC Proofpoint Click Permitted
-      playbookId: 'SOC Proofpoint Click Permitted'
+      playbookId: SOC Proofpoint Click Permitted
+      playbooktaskmissingcomponent: null
       type: playbook
       version: -1
-    taskid: 97148474-cba0-40f2-9849-4ebf9abfd4c0
+    taskid: 372b1fed-48a1-48fa-8131-cb1c427f123b
     timertriggers: []
     type: playbook
     view: |-
@@ -270,13 +279,14 @@ tasks:
     skipunavailable: false
     task:
       brand: ""
-      id: f55d5c4e-fa40-4765-91ad-99c2cc67f363
+      id: d2e4b815-6686-4711-8504-bcec9c4a364b
       iscommand: false
       name: SOC Proofpoint Message Delivered
-      playbookId: 'SOC Proofpoint Message Delivered'
+      playbookId: SOC Proofpoint Message Delivered
+      playbooktaskmissingcomponent: null
       type: playbook
       version: -1
-    taskid: f55d5c4e-fa40-4765-91ad-99c2cc67f363
+    taskid: d2e4b815-6686-4711-8504-bcec9c4a364b
     timertriggers: []
     type: playbook
     view: |-
