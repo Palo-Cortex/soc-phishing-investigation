@@ -14,9 +14,9 @@ Set up a **Playbook Trigger** to automatically execute the appropriate logic whe
 
 Go To: Incident Response → Incident Configuration → Playbook Triggers
 
-- **Trigger Name:** `EP_InitialAccess_Phishing`
+- **Trigger Name:** `EP_InitialAccess`
 - **Type:** Entry Point Playbook
-- **Playbook to Trigger:** `EP_InitialAccess_Phishing`
+- **Playbook to Trigger:** `EP_InitialAccess`
 - **Filter Criteria:**
   - Alert Field: `Mitre ATT&CK Tactic`
   - Condition: Equals `TA0001 - Initial Access`
@@ -25,7 +25,7 @@ Go To: Incident Response → Incident Configuration → Playbook Triggers
 
 ### Step 2: Entry Point Playbook Structure
 
-The `EP_InitialAccess_Phishing` playbook is designed to:
+The `EP_InitialAccess` playbook is designed to:
 
 - Validate alert fidelity using starring or incident scoring
 - Parse email and URL artifacts
