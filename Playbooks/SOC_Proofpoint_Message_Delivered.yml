@@ -19,7 +19,7 @@ inputs:
 - description: Shadow Mode is a key safety mechanism. It ensures actions like isolate_endpoint
     or disable_user are logged but not executed in test.json scenarios.
   key: ShadowMode
-  playbookInputQuery: null
+  playbookInputQuery:
   required: false
   value:
     simple: "true"
@@ -791,3 +791,4 @@ view: |-
       }
     }
   }
+fromversion: 5.0.0
